@@ -1,0 +1,60 @@
+--- lspb_before_tc_proj.py	2026-10-26 22:59:52.979425537 +0000
++++ lspb.py	2026-10-26 23:00:05.015426252 +0000
+@@ -56,11 +56,21 @@
+     return D / vmax + vmax / amax if D >= vmax**2 / amax else 2.0 * np.sqrt(D / amax)
+ 
+ 
++def _tf_elegido(tf, tf_min, paso):
++    """t_f por defecto (tf_min redondeado hacia arriba a `paso`) o el dado, que debe ser >= tf_min."""
++    if tf is None:
++        return float(np.ceil(tf_min / paso - 1e-9) * paso)
++    if tf < tf_min - 1e-12:
++        raise ValueError(f"t_f = {tf:.4f} s es menor que el mínimo {tf_min:.4f} s con estos v_max, a_max y t_c. "
++                         f"Use t_f >= {tf_min:.4f} s, o None para el mínimo.")
++    return float(tf)
++
++
+ # --------------------------------------------------------------------------- planificacion sincronizada
+ class LSPB:
+     """Perfil LSPB sincronizado de q_i a q_f: mismo tf y tc para las 6 juntas."""
+ 
+-    def __init__(self, q_i, q_f, vmax=VMAX, amax=AMAX, tf=None):
++    def __init__(self, q_i, q_f, vmax=VMAX, amax=AMAX, tf=None, tc=None):
+         self.q_i = np.asarray(q_i, dtype=float)
+         self.q_f = np.asarray(q_f, dtype=float)
+         self.D = self.q_f - self.q_i
+@@ -68,21 +78,22 @@
+         self.tf_min = np.array([tiempo_minimo(d, v, a) for d, v, a in zip(self.D, self.vmax, self.amax)])
+         self.critica = int(np.argmax(self.tf_min))                          # junta que fija el tiempo
+         k = self.critica
+-        if tf is None:
+-            # t_f por defecto: el mínimo de la junta crítica, redondeado hacia arriba a PASO_TF_S
+-            self.tf = float(np.ceil(self.tf_min.max() / PASO_TF_S - 1e-9) * PASO_TF_S)
++        if tc is None:
++            # t_c por la fórmula de clase con la aceleración máxima de la junta crítica
++            tf_min = self.tf_min.max()
++            self.tf = _tf_elegido(tf, tf_min, PASO_TF_S)
++            self.tc = tiempo_mezcla(0.0, abs(self.D[k]), self.tf, self.amax[k])
+         else:
+-            # t_f elegido: debe ser al menos el mínimo de la junta crítica (sin redondeo)
+-            if tf < self.tf_min.max() - 1e-12:
+-                raise ValueError(
+-                    f"t_f = {tf:.4f} s es menor que el mínimo {self.tf_min.max():.4f} s de la junta crítica "
+-                    f"q{k + 1} con estos v_max y a_max. Use t_f >= {self.tf_min.max():.4f} s, o None para el mínimo.")
+-            self.tf = float(tf)
+-        # tc con la formula de clase, usando en la junta critica su aceleracion maxima.
+-        self.tc = tiempo_mezcla(0.0, abs(self.D[k]), self.tf, self.amax[k])
+-        # Todas las juntas comparten tc: de q(tf - tc) continuo sale D = q̈c tc (tf - tc).
++            # t_c dado: el t_f mínimo que cumple v_max y a_max en todas las juntas es
++            # max_j (t_c + max(|D_j| / v_max_j, |D_j| / (t_c a_max_j))), y además t_f >= 2 t_c
++            self.tc = float(tc)
++            tf_min = max(self.tc + np.max(np.maximum(np.abs(self.D) / self.vmax,
++                                                    np.abs(self.D) / (self.tc * self.amax))), 2 * self.tc)
++            self.tf = _tf_elegido(tf, tf_min, PASO_TF_S)
+         self.qd_c = self.D / (self.tf - self.tc)                            # q̇c [rad/s]
+         self.qdd_c = self.qd_c / self.tc                                    # q̈c [rad/s^2]
++        if np.any(np.abs(self.qd_c) > self.vmax + 1e-9) or np.any(np.abs(self.qdd_c) > self.amax + 1e-9):
++            raise ValueError("el perfil LSPB viola v_max o a_max en alguna junta.")
+ 
+     def fase(self, t):
+         return "aceleración" if t <= self.tc else ("vel. constante" if t <= self.tf - self.tc else "desaceleración")
