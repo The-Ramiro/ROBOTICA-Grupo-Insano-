@@ -1,0 +1,618 @@
+{
+  "observed_at_utc": "2026-10-29T21:35:16.287203+00:00",
+  "local_inventory": {
+    "platform": "Linux-7.0.0-38-generic-x86_64-desconocido-with-glibc2.43",
+    "python": "3.14.4",
+    "interfaces": [
+      {
+        "name": "docker0",
+        "wireless": false,
+        "operstate": "down",
+        "carrier": "0"
+      },
+      {
+        "name": "enx00e04c36006d",
+        "wireless": false,
+        "operstate": "up",
+        "carrier": "1"
+      },
+      {
+        "name": "lo",
+        "wireless": false,
+        "operstate": "unknown",
+        "carrier": "1"
+      },
+      {
+        "name": "wlo1",
+        "wireless": true,
+        "operstate": "up",
+        "carrier": "1"
+      }
+    ],
+    "addresses": [
+      {
+        "ifindex": 1,
+        "ifname": "lo",
+        "flags": [
+          "LOOPBACK",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 65536,
+        "qdisc": "noqueue",
+        "operstate": "UNKNOWN",
+        "group": "default",
+        "txqlen": 1000,
+        "link_type": "loopback",
+        "address": "00:00:00:00:00:00",
+        "broadcast": "00:00:00:00:00:00",
+        "addr_info": [
+          {
+            "family": "inet",
+            "local": "127.0.0.1",
+            "prefixlen": 8,
+            "scope": "host",
+            "label": "lo",
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          },
+          {
+            "family": "inet6",
+            "local": "::1",
+            "prefixlen": 128,
+            "scope": "host",
+            "noprefixroute": true,
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          }
+        ]
+      },
+      {
+        "ifindex": 2,
+        "ifname": "enx00e04c36006d",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "qdisc": "fq_codel",
+        "operstate": "UP",
+        "group": "default",
+        "txqlen": 1000,
+        "link_type": "ether",
+        "address": "00:e0:4c:36:00:6d",
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "addr_info": [
+          {
+            "family": "inet",
+            "local": "192.168.125.203",
+            "prefixlen": 24,
+            "broadcast": "192.168.125.255",
+            "scope": "global",
+            "dynamic": true,
+            "noprefixroute": true,
+            "label": "enx00e04c36006d",
+            "valid_life_time": 863763,
+            "preferred_life_time": 863763
+          },
+          {
+            "family": "inet6",
+            "local": "fe80::b237:d2b7:546a:56ee",
+            "prefixlen": 64,
+            "scope": "link",
+            "noprefixroute": true,
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          }
+        ]
+      },
+      {
+        "ifindex": 3,
+        "ifname": "wlo1",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "qdisc": "noqueue",
+        "operstate": "UP",
+        "group": "default",
+        "txqlen": 1000,
+        "link_type": "ether",
+        "address": "d8:80:83:2c:a4:8d",
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "altnames": [
+          "wlp1s0",
+          "wlxd880832ca48d"
+        ],
+        "addr_info": [
+          {
+            "family": "inet",
+            "local": "172.22.29.125",
+            "prefixlen": 21,
+            "broadcast": "172.22.31.255",
+            "scope": "global",
+            "dynamic": true,
+            "noprefixroute": true,
+            "label": "wlo1",
+            "valid_life_time": 10063,
+            "preferred_life_time": 10063
+          },
+          {
+            "family": "inet6",
+            "local": "fe80::b8a:2945:8ed9:8b00",
+            "prefixlen": 64,
+            "scope": "link",
+            "noprefixroute": true,
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          }
+        ]
+      },
+      {
+        "ifindex": 4,
+        "ifname": "docker0",
+        "flags": [
+          "NO-CARRIER",
+          "BROADCAST",
+          "MULTICAST",
+          "UP"
+        ],
+        "mtu": 1500,
+        "qdisc": "noqueue",
+        "operstate": "DOWN",
+        "group": "default",
+        "link_type": "ether",
+        "address": "7e:7b:9f:a7:16:b6",
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "addr_info": [
+          {
+            "family": "inet",
+            "local": "172.17.0.1",
+            "prefixlen": 16,
+            "broadcast": "172.17.255.255",
+            "scope": "global",
+            "label": "docker0",
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          }
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "dst": "default",
+        "gateway": "172.22.24.1",
+        "dev": "wlo1",
+        "protocol": "dhcp",
+        "prefsrc": "172.22.29.125",
+        "metric": 600,
+        "flags": []
+      },
+      {
+        "dst": "172.17.0.0/16",
+        "dev": "docker0",
+        "protocol": "kernel",
+        "scope": "link",
+        "prefsrc": "172.17.0.1",
+        "flags": [
+          "linkdown"
+        ]
+      },
+      {
+        "dst": "172.22.24.0/21",
+        "dev": "wlo1",
+        "protocol": "kernel",
+        "scope": "link",
+        "prefsrc": "172.22.29.125",
+        "metric": 600,
+        "flags": []
+      },
+      {
+        "dst": "192.168.125.0/24",
+        "dev": "enx00e04c36006d",
+        "protocol": "kernel",
+        "scope": "link",
+        "prefsrc": "192.168.125.203",
+        "metric": 100,
+        "flags": []
+      }
+    ]
+  },
+  "controller_probe": {
+    "transport": "RWS 1.0 / HTTP Digest",
+    "base_url": "http://192.168.125.1",
+    "mechunit": "ROB_1",
+    "mode": "read_only",
+    "movement_authorized": false,
+    "state": "rws_joint_snapshot_observed",
+    "resources": [
+      {
+        "path": "/rw/system",
+        "http_status": 200,
+        "records": [
+          {
+            "_type": "sys-system-li",
+            "_title": "system",
+            "major": "6",
+            "minor": "12",
+            "build": "1014",
+            "revision": "01",
+            "sub-revision": "00",
+            "buildtag": "",
+            "robapi-compatibility-revision": "0",
+            "title": "RobotWare",
+            "type": "RobotWare",
+            "description": "Controller Software",
+            "date": "2021-05-12",
+            "mctimestamp": "#08:57:17/May 12 2021#",
+            "name": "120-101516",
+            "rwversion": "6.12.1014",
+            "sysid": "{2e4101e3-9025-4fd8-90a2-83301c130aa3}",
+            "starttm": "2026-10-29 T 22:38:32",
+            "rwversionname": "6.12.01.00"
+          },
+          {
+            "_type": "sys-options-li",
+            "_title": "options",
+            "_links": {
+              "self": {
+                "href": "options?json=1"
+              }
+            },
+            "options": [
+              {
+                "_type": "sys-option-li",
+                "_title": "0",
+                "option": "UDPUC Driver"
+              },
+              {
+                "_type": "sys-option-li",
+                "_title": "1",
+                "option": "English"
+              },
+              {
+                "_type": "sys-option-li",
+                "_title": "2",
+                "option": "687-1 Advanced Robot Motion"
+              },
+              {
+                "_type": "sys-option-li",
+                "_title": "3",
+                "option": "613-1 Collision Detection"
+              },
+              {
+                "_type": "sys-option-li",
+                "_title": "4",
+                "option": "709-1 DeviceNet Master/Slave"
+              },
+              {
+                "_type": "sys-option-li",
+                "_title": "5",
+                "option": "689-1 Externally Guided Motion (EGM)"
+              },
+              {
+                "_type": "sys-option-li",
+                "_title": "6",
+                "option": "617-1 FlexPendant Interface"
+              },
+              {
+                "_type": "sys-option-li",
+                "_title": "7",
+                "option": "614-1 FTP SFTP and NFS client"
+              },
+              {
+                "_type": "sys-option-li",
+                "_title": "8",
+                "option": "610-1 Independent Axis"
+              },
+              {
+                "_type": "sys-option-li",
+                "_title": "9",
+                "option": "623-1 Multitasking"
+              },
+              {
+                "_type": "sys-option-li",
+                "_title": "10",
+                "option": "612-1 Path Offset"
+              },
+              {
+                "_type": "sys-option-li",
+                "_title": "11",
+                "option": "611-1 Path Recovery"
+              },
+              {
+                "_type": "sys-option-li",
+                "_title": "12",
+                "option": "616-1 PC Interface"
+              },
+              {
+                "_type": "sys-option-li",
+                "_title": "13",
+                "option": "628-1 Sensor Interface"
+              },
+              {
+                "_type": "sys-option-li",
+                "_title": "14",
+                "option": "885-1 SoftMove"
+              },
+              {
+                "_type": "sys-option-li",
+                "_title": "15",
+                "option": "608-1 World Zones"
+              },
+              {
+                "_type": "sys-option-li",
+                "_title": "16",
+                "option": "RobotWare Base"
+              },
+              {
+                "_type": "sys-option-li",
+                "_title": "17",
+                "option": "Axis Calibration"
+              },
+              {
+                "_type": "sys-option-li",
+                "_title": "18",
+                "option": "Pendelum Calibration"
+              },
+              {
+                "_type": "sys-option-li",
+                "_title": "19",
+                "option": "Motor Commutation"
+              },
+              {
+                "_type": "sys-option-li",
+                "_title": "20",
+                "option": "Service Info System"
+              },
+              {
+                "_type": "sys-option-li",
+                "_title": "21",
+                "option": "Drive System IRB 120/140/260/360/910SC/1200/1400/1520/1600/1660ID IRC5 Compact"
+              },
+              {
+                "_type": "sys-option-li",
+                "_title": "22",
+                "option": "IRB 120-3/0.6"
+              },
+              {
+                "_type": "sys-option-li",
+                "_title": "23",
+                "option": "StateMachine Core"
+              }
+            ]
+          },
+          {
+            "_type": "sys-option-li",
+            "_title": "0",
+            "option": "UDPUC Driver"
+          },
+          {
+            "_type": "sys-option-li",
+            "_title": "1",
+            "option": "English"
+          },
+          {
+            "_type": "sys-option-li",
+            "_title": "2",
+            "option": "687-1 Advanced Robot Motion"
+          },
+          {
+            "_type": "sys-option-li",
+            "_title": "3",
+            "option": "613-1 Collision Detection"
+          },
+          {
+            "_type": "sys-option-li",
+            "_title": "4",
+            "option": "709-1 DeviceNet Master/Slave"
+          },
+          {
+            "_type": "sys-option-li",
+            "_title": "5",
+            "option": "689-1 Externally Guided Motion (EGM)"
+          },
+          {
+            "_type": "sys-option-li",
+            "_title": "6",
+            "option": "617-1 FlexPendant Interface"
+          },
+          {
+            "_type": "sys-option-li",
+            "_title": "7",
+            "option": "614-1 FTP SFTP and NFS client"
+          },
+          {
+            "_type": "sys-option-li",
+            "_title": "8",
+            "option": "610-1 Independent Axis"
+          },
+          {
+            "_type": "sys-option-li",
+            "_title": "9",
+            "option": "623-1 Multitasking"
+          },
+          {
+            "_type": "sys-option-li",
+            "_title": "10",
+            "option": "612-1 Path Offset"
+          },
+          {
+            "_type": "sys-option-li",
+            "_title": "11",
+            "option": "611-1 Path Recovery"
+          },
+          {
+            "_type": "sys-option-li",
+            "_title": "12",
+            "option": "616-1 PC Interface"
+          },
+          {
+            "_type": "sys-option-li",
+            "_title": "13",
+            "option": "628-1 Sensor Interface"
+          },
+          {
+            "_type": "sys-option-li",
+            "_title": "14",
+            "option": "885-1 SoftMove"
+          },
+          {
+            "_type": "sys-option-li",
+            "_title": "15",
+            "option": "608-1 World Zones"
+          },
+          {
+            "_type": "sys-option-li",
+            "_title": "16",
+            "option": "RobotWare Base"
+          },
+          {
+            "_type": "sys-option-li",
+            "_title": "17",
+            "option": "Axis Calibration"
+          },
+          {
+            "_type": "sys-option-li",
+            "_title": "18",
+            "option": "Pendelum Calibration"
+          },
+          {
+            "_type": "sys-option-li",
+            "_title": "19",
+            "option": "Motor Commutation"
+          },
+          {
+            "_type": "sys-option-li",
+            "_title": "20",
+            "option": "Service Info System"
+          },
+          {
+            "_type": "sys-option-li",
+            "_title": "21",
+            "option": "Drive System IRB 120/140/260/360/910SC/1200/1400/1520/1600/1660ID IRC5 Compact"
+          },
+          {
+            "_type": "sys-option-li",
+            "_title": "22",
+            "option": "IRB 120-3/0.6"
+          },
+          {
+            "_type": "sys-option-li",
+            "_title": "23",
+            "option": "StateMachine Core"
+          },
+          {
+            "_type": "sys-license-li",
+            "_title": "license",
+            "self": {
+              "href": "license?json=1"
+            }
+          },
+          {
+            "_links": {
+              "self": {
+                "href": "products"
+              }
+            },
+            "_type": "sys-products-li",
+            "_title": "products"
+          }
+        ]
+      },
+      {
+        "path": "/rw/panel/ctrlstate",
+        "http_status": 200,
+        "records": [
+          {
+            "_type": "pnl-ctrlstate",
+            "_title": "ctrlstate",
+            "ctrlstate": "motoroff"
+          }
+        ]
+      },
+      {
+        "path": "/rw/panel/opmode",
+        "http_status": 200,
+        "records": [
+          {
+            "_type": "pnl-opmode",
+            "_title": "opmode",
+            "opmode": "AUTO"
+          }
+        ]
+      },
+      {
+        "path": "/rw/rapid/execution",
+        "http_status": 200,
+        "records": [
+          {
+            "_type": "rap-execution",
+            "_title": "execution",
+            "ctrlexecstate": "stopped",
+            "cycle": "forever"
+          }
+        ]
+      },
+      {
+        "path": "/rw/motionsystem/mechunits",
+        "http_status": 200,
+        "records": [
+          {
+            "_type": "ms-mechunit-li",
+            "_title": "ROB_1",
+            "_links": {
+              "self": {
+                "href": "mechunits/ROB_1?json=1"
+              }
+            },
+            "mode": "Activated",
+            "activation-allowed": "True",
+            "drive-module": "0"
+          }
+        ]
+      },
+      {
+        "path": "/rw/motionsystem/mechunits/ROB_1/jointtarget",
+        "http_status": 200,
+        "records": [
+          {
+            "_type": "ms-jointtarget",
+            "_title": "ROB_1",
+            "rax_1": "55.3010673522949",
+            "rax_2": "16.9463996887207",
+            "rax_3": "0.643334805965424",
+            "rax_4": "-45.4281921386719",
+            "rax_5": "-63.6680183410645",
+            "rax_6": "9.13182830810547",
+            "eax_a": "0",
+            "eax_b": "0",
+            "eax_c": "0",
+            "eax_d": "0",
+            "eax_e": "0",
+            "eax_f": "0"
+          }
+        ]
+      }
+    ],
+    "joint_snapshot": {
+      "rax_1_to_6": [
+        55.3010673522949,
+        16.9463996887207,
+        0.643334805965424,
+        -45.4281921386719,
+        -63.6680183410645,
+        9.13182830810547
+      ],
+      "unit": "deg (convención jointtarget/robax de RAPID)",
+      "origin": "controller_http_response",
+      "physical_controller_identity_confirmed": false,
+      "note": "Contrastar identidad y valores con el FlexPendant; no implica movimiento ni trayectoria aceptada."
+    }
+  }
+}

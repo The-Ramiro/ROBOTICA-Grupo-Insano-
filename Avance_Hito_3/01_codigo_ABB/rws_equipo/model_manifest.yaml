@@ -1,0 +1,186 @@
+# Gate 0: lo desconocido se conserva como null; no es aprobación del hardware.
+robot_model: ABB_IRB120_3_0_6
+controller_model: null
+robotware_version: '6.12.01.00'
+# Verificadas en la lista de opciones fotografiada; no es consulta en vivo.
+controller_options_verified:
+  - "689-1 Externally Guided Motion (EGM)"
+  - "623-1 Multitasking"
+  - "616-1 PC Interface"
+  - "UDP UC Driver"
+  - "687-1 Advanced Robot Motion"
+  - "613-1 Collision Detection"
+  - "709-1 DeviceNet Master/Slave"
+  - "617-1 FlexPendant Interface"
+  - "614-1 FTP SFTP and NFS client"
+  - "610-1 Independent Axis"
+  - "612-1 Path Offset"
+  - "611-1 Path Recovery"
+  - "628-1 Sensor Interface"
+  - "885-1 SoftMove"
+  - "608-1 World Zones"
+  - "RobotWare Base"
+ros_distribution: jazzy
+operating_system: Ubuntu_26.04.1_LTS
+kinematics_reference: null
+urdf_source_commit: 19639122be7aeb98a6e96b8aea44530f94885c31
+base_frame: base_link
+tcp_frame: gripper_tcp
+joint_order: [joint_1, joint_2, joint_3, joint_4, joint_5, joint_6]
+angle_unit: rad
+length_unit: m
+rpy_convention: "Rz(yaw) * Ry(pitch) * Rx(roll)"
+record_status: partially_verified
+
+audit_date: '2026-10-20'
+robot_serial_observed: '120-101516'
+robot_model_evidence: fotos/equipo/856105511_972111242619279_1826443544156678714_n.jpg
+controller_hypothesis: IRC5_Compact
+controller_hypothesis_status: pending_nameplate_verification
+controller_main_computer_model: null
+controller_system_name_observed: '120-101516'
+controller_system_name_evidence: fotos/flexpendant/855156643_1021735353659224_8600621675227135592_n.jpg
+controller_mechanical_unit_observed: ROB_1
+controller_options_evidence: fotos/flexpendant/853082554_2593180977825989_6769481757691654016_n.jpg
+controller_options_verification_scope: photographed_options_list_not_live_query
+controller_robotware_version_evidence_status: reported_by_user_from_FlexPendant_2026_10_22
+controller_robotware_version_evidence: docs/conexion_abb/evidencias/robotware_reportado_2026-10-22.json
+controller_network_observed:
+  observation_scope: photographed_configuration_not_live_connectivity
+  service:
+    ip: 192.168.125.1
+    netmask: 255.255.255.0
+    gateway: null
+    gateway_display_text: None
+    evidence: fotos/flexpendant/855960479_2029194091093971_8662650587010659671_n.jpg
+  wan:
+    configuration: DHCP
+    ip: null
+    gateway: null
+    address_evidence_status: fields_blank_in_photo_not_zero_or_absence_of_network
+    evidence: fotos/flexpendant/850871225_3669278733235500_3305222871120947565_n.jpg
+  service_port_label: X2 Service 10/100
+  service_port_evidence: fotos/conexiones/850268306_1832902787824998_2294950866819187083_n.jpg
+  linux_ethernet_link_verified: true
+  linux_ethernet_link_evidence: docs/conexion_abb/evidencias/g1a_enlace_2026-10-29.json
+controller_state_snapshot:
+  capture_timestamp: null
+  operation_mode_display: Manual
+  controller_status_display: Guard Stop
+  execution_status_display: Stopped
+  speed_indicator_percent: 100
+  speed_indicator_scope: display_indicator_not_measured_joint_speed
+  evidence: fotos/flexpendant/855156643_1021735353659224_8600621675227135592_n.jpg
+  current_state_verified: false
+controller_backup:
+  backup_verified: false
+  evidence_scope: menu_only_no_completed_backup_evidence
+  evidence: fotos/flexpendant/850334948_3064085187271613_2972342787603937018_n.jpg
+local_pc_inventory_scope: historical_observation_recheck_before_connection
+workspace_commit_at_audit: 19639122be7aeb98a6e96b8aea44530f94885c31
+local_model_source: hito2/irb120/dh.py
+local_urdf_source: hito2/datos/irb120.urdf
+local_urdf_geometric_independence: false
+model_tool0_to_tcp_z_m: 0.150
+# 2026-10-22: irb120_hito1 alineado al Hito 2; xacro y dh.py leen la misma fuente.
+ros_tool0_to_tcp_z_m: 0.150
+ros_tcp_source: ros2_ws/src/irb120_hito1/config/tcp.yaml
+# Valor histórico del paquete ROS antes de la alineación; ya no se usa.
+previous_ros_tool0_to_tcp_z_m: 0.100
+# 0.150 es convención del modelo, no medición: el tooldata real sigue sin leerse.
+tcp_verified_on_robot: false
+physical_tcp: null
+# Comparación FK offline del modelo propio (Hito 1) contra ROS-Industrial en tool0.
+offline_fk_reference: "hito2/irb120/rosi_model.py (ROS-Industrial abb_irb120_support irb120_3_58_macro.xacro, kinetic-devel)"
+offline_fk_evidence: docs/conexion_abb/evidencias/fk_hito1_vs_rosi.csv
+offline_fk_evidence_script: scripts/comparar_fk_hito1_rosi.py
+controller_base_to_model_base: null
+controller_joint_mapping_verified: false
+frame_scope: local_model_only_not_verified_against_controller
+driver_candidate:
+  repository: https://github.com/PickNikRobotics/abb_ros2
+  audited_branch: rolling
+  audited_commit: e6486f7409073cdb2a10d6878bb50191dd50172b
+  local_compilation_verified: false
+  physical_compatibility_verified: false
+physical_connection_verified: true
+movement_authorized: false
+last_update_date: '2026-11-04'
+physical_connection_evidence: docs/conexion_abb/evidencias/verificacion_rws_ros_tf_2026-11-03.json
+physical_ros_tf_validation:
+  status: observed_stationary_RWS_ROS_TF
+  synchronized_samples: 28
+  maximum_difference_deg: 7.105427357601002e-15
+rviz_physical_following:
+  status: reported_successful_by_user
+  report_date: '2026-11-03'
+  scope: user_report_not_new_instrumented_observation
+live_fk_controller_validation:
+  implementation: ros2_ws/src/irb120_conexion/irb120_conexion/nodos/validacion_fk
+  status: physical_tool0_stationary_observed_partial_joint_coverage
+  tool: tool0
+  work_object: wobj0
+  coordinate: Base
+  position_tolerance_m: 1.0e-6
+  orientation_tolerance_rad: 1.0e-6
+  tolerance_scope: strict_project_numerical_criterion_not_official_physical_requirement
+  physical_trial_note: live_session_recomputed_2026_11_04_initial_outliers_retained_full_six_joint_campaign_pending
+  evidence: docs/conexion_abb/evidencias/fk_real_2026-11-04_224412Z_resumen.json
+  observed_samples: 1365
+  within_proposed_tolerance: 1177
+  outside_proposed_tolerance: 25
+  not_evaluable: 163
+  final_stationary_samples: 100
+  final_stationary_duration_s: 19.800399
+  final_stationary_position_error_mm: 7.451143150356348e-05
+  final_stationary_orientation_error_rad: 2.0568284452128297e-07
+  scope: Base_tool0_wobj0_mainly_J1_J2_J3_not_physical_TCP_or_absolute_accuracy
+evidence_directory: docs/conexion_abb/evidencias
+joint_control_prototype:
+  implementation: ros2_ws/src/irb120_control
+  status: rviz_ros_udp_loopback_verified_physical_egm_pending
+  transport: EGM_UDP_Protobuf_Python_prototype_no_hard_realtime_guarantee
+  interface: RViz_InteractiveMarkers_single_joint_preview_arm_execute
+  physical_configuration: NO_GO_template_requires_verified_lab_session
+  physical_motion_tested: false
+  offline_tests_passed: 24
+  offline_evidence: docs/conexion_abb/evidencias/control_demo_5_10_2026-11-04.json
+  simulated_max_step_options_deg: [1, 5, 10]
+  initial_physical_max_step_deg: 1
+  physical_preparation_guide: docs/conexion_abb/PREPARAR_EGM_FISICO.md
+  rapid_template_compiled: false
+  limits_source: hito2/irb120/dh.py_crosschecked_with_URDF_and_intersected_with_controller_limits
+  commands_guide: docs/conexion_abb/COMANDOS_LABORATORIO.md
+controller_photographic_record: docs/conexion_abb/evidencias/controlador_fotos_2026-10-20.json
+rws_rapid_j6_trial:
+  updated: '2026-11-10'
+  session_result: physical_motion_attempt_unsuccessful
+  route: RWS_HTTP_Digest_pcTarget_and_local_RAPID_not_EGM
+  controller: '120-101516'
+  zero_displacement_reception_verified: true
+  module_transfer_readback_verified: true
+  module1_content_unchanged: true
+  candidate_rapid_compilation_verified: true
+  candidate_rapid_verification_source: user_confirmed_FlexPendant_Verify_Program_no_errors_2026_11_10
+  first_target_prepared_readback_verified: true
+  physical_j6_motion_tested: false
+  physical_motion_attempt_reported: true
+  physical_j6_motion_verified: false
+  observation_samples: 584
+  observation_max_displacement_deg: 0.0
+  observation_final_j6_error_deg: -0.1
+  last_confirmed_mode: AUTO
+  local_routine_execution_verified: false
+  target_state_at_session_end: unknown_may_remain_pending
+  historical_40322_status: original_Windows_load_error_corrected_before_Linux_session
+  closeout: docs/conexion_abb/CIERRE_PRUEBA_J6_2026-11-10.md
+  next_session_guide: docs/conexion_abb/PROXIMA_SESION_J6.md
+  read_only_diagnostic_command: './iniciar.sh rws_j6 diagnosticar'
+  offline_rws_tests_passed: 21
+  diagnostic_hardware_validation: pending_next_visit
+  max_prepared_delta_deg: 0.1
+  rapid_orientation_speed_parameter_deg_s: 0.5
+  physical_acceleration_verified: false
+  session_go: user_reported_responsible_and_operator_authorization_only_for_current_trial
+  commands_guide: docs/conexion_abb/PRUEBA_J6_RWS_RAPID.md
+  evidence: docs/conexion_abb/evidencias/rws_j6_2026-11-10.json

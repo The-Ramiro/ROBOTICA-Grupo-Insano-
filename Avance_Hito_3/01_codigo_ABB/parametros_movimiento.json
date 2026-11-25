@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "robot": "IRB120-3/0.6",
+  "source": "https://library.e.abb.com/public/7aa0711a20fa41c49a8fdf3bbc3d5bb0/IRB120-Rev.J-ROBO149EN_D.pdf",
+  "global_speed_percent": 1.0,
+  "preview_acceleration_deg_s2": 2.0,
+  "joint_margin_deg": 2.0,
+  "physical_execution_allowed": false,
+  "axes": [
+    {
+      "min_deg": -165.0,
+      "max_deg": 165.0,
+      "axis_speed_percent": 100.0,
+      "max_command_travel_percent": 1.0
+    },
+    {
+      "min_deg": -110.0,
+      "max_deg": 110.0,
+      "axis_speed_percent": 100.0,
+      "max_command_travel_percent": 1.0
+    },
+    {
+      "min_deg": -110.0,
+      "max_deg": 70.0,
+      "axis_speed_percent": 100.0,
+      "max_command_travel_percent": 1.0
+    },
+    {
+      "min_deg": -160.0,
+      "max_deg": 160.0,
+      "axis_speed_percent": 100.0,
+      "max_command_travel_percent": 1.0
+    },
+    {
+      "min_deg": -120.0,
+      "max_deg": 120.0,
+      "axis_speed_percent": 100.0,
+      "max_command_travel_percent": 1.0
+    },
+    {
+      "min_deg": -400.0,
+      "max_deg": 400.0,
+      "axis_speed_percent": 100.0,
+      "max_command_travel_percent": 1.0
+    }
+  ]
+}

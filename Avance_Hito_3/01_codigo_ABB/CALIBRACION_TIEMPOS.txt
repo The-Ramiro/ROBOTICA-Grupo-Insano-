@@ -1,0 +1,107 @@
+AJUSTE DEL 24/11/2026 CON MEDICIONES AL 60% Y AL 80%
+
+La calibración usa dieciséis recorridos completos del mismo conjunto de
+destinos. Hay mediciones a 20%, 40%, 50%, 60%, 80% y 100%. En Seguimiento,
+si hay lecturas cercanas antes y después de empezar a moverse, se alinea
+solo la espera inicial estimada con ese arranque. Se conservan los tiempos
+originales del registro y las duraciones LSPB de todos los tramos. Los
+tiempos previstos siguen mostrando los desfases posteriores al arranque.
+
+En la última ejecución al 60%, la confirmación del ABB y un margen de
+0,4 grados permiten situar al menos una llegada intermedia. Las marcas
+se toman como aproximadas según el intervalo de lectura. Los porcentajes
+por debajo de 20% siguen usando extrapolación.
+
+AJUSTE DEL 24/11/2026 CON NUEVE RECORRIDOS COMPLETOS
+
+Se incorporaron dos mediciones al 40% y una repetición adicional al 50% y al
+100%. Se recalcularon los tiempos por porcentaje manteniendo el modelo LSPB.
+
+Al 40% las dos sesiones duraron 15,336 s y 15,661 s. El nuevo perfil del mismo
+recorrido estima 15,498 s, frente a los 16,509 s de la captura del último
+recorrido. La estimación de llegada a P4 cambia de 15,670 s a 15,007 s. Los
+huecos en la telemetría original se conservan.
+
+Para porcentajes intermedios se interpolan los ajustes de 20%, 40%, 50% y 100%.
+Por debajo de 20% se extrapola. El modelo se ajustó a este recorrido y puede
+diferir para otros recorridos o condiciones. Los registros anteriores conservan
+la referencia de su sesión. El ajuste solo cambia los tiempos previstos.
+
+MEDICIÓN AL 20% DEL 24/11/2026
+
+La estimación al 20% pasa de 30,43 s a 29,17 s, ajustada al recorrido medido.
+Las pruebas posteriores al 50% y al 100% duraron 13,84 s y 8,96 s frente a
+13,93 s y 9,00 s previstos. Se mantienen esos dos ajustes.
+
+Al 20% se ajustaron el factor de duración del movimiento y las esperas con
+una sola ejecución confirmada. La llegada cerca de P3 se observó dentro de
+0,20 grados por el intervalo de muestreo. La duración total corresponde al
+registro completo y requiere otra prueba para validar la estimación al 20%.
+
+AJUSTE CON CUATRO RECORRIDOS DEL 24/11/2026
+
+Se hicieron dos repeticiones de la misma trayectoria a cada velocidad.
+Al 50% se registraron 14,46 y 13,39 s. El nuevo perfil estima 13,93 s.
+Al 100% se registraron 8,89 y 9,11 s. El nuevo perfil estima 9,00 s.
+
+El ajuste utiliza tiempos de inicio, movimiento y confirmación por separado.
+Entre porcentajes medidos, interpola el factor temporal y las esperas.
+Los tramos conservan sus puntos y se estiman con un perfil LSPB.
+La diferencia entre repeticiones limita la precisión de un pronóstico.
+El historial conserva las referencias vigentes cuando se registró cada prueba.
+
+ACTUALIZACIÓN DEL 24/11/2026
+
+El ajuste activo usa dos recorridos completos con la misma postura inicial
+y los mismos cuatro tramos, al 50% y al 100%. Sustituye el ajuste anterior.
+
+Porcentaje   Previsto anterior   Previsto ajustado   Registro real
+50%             12,819 s             14,640 s          14,463 s
+100%             7,460 s              8,883 s           8,885 s
+
+Espera inicial ajustada de 2,260 s y confirmación final de 0,865 s.
+Los coeficientes vigentes y las observaciones están en calibracion_tiempos.json.
+Al ajustar con solo una prueba y estimar la otra, el error total fue de
++0,353 s al 50% y -0,004 s al 100%. Ambas pruebas usaron la misma ruta.
+La estimación de otras rutas requiere validación y por debajo del 50%
+se extrapola. Las curvas guardadas conservan su referencia original.
+
+AJUSTE ANTERIOR CONSERVADO COMO HISTORIAL
+
+CALIBRACIÓN TEMPORAL — 21/11/2026
+Afecta exclusivamente a la simulación y las referencias gráficas.
+No cambia RWS, RAPID, MoveAbsJ, los destinos ni la velocidad física del ABB.
+
+Datos: dos sesiones completas del mismo IRB120 con tool0, al 40% y al 50%.
+Se localizaron ocho tramos mediante lecturas articulares y llegada a sus metas
+con tolerancia de 0,05 grados. El inicio de movimiento usa 0,3 grados para
+separar el ruido de la espera inicial; se omiten desplazamientos menores de
+0,15 grados al ajustar el modelo. El muestreo aporta incertidumbre temporal.
+
+Modelo aprendido a partir de esos tramos:
+T100 = 0,440493*(1-exp(-max_delta_grados/5))
+       + 4,451040*max(abs(delta_j)/vmax_j_fabricante).
+Tmovimiento(porcentaje) = T100*100/porcentaje.
+Espera inicial media robusta: 1,620649 s.
+Espera final de confirmación: 0,480922 s.
+La mezcla LSPB del 8% es asumida: se calibraron los tiempos, no el seguimiento
+angular ni la dinámica del controlador ABB.
+
+Al generar LSPB se adaptan los límites MATEMÁTICOS de aceleración para obtener
+la duración ajustada; se conserva la cota nominal de velocidad por eje. Estos
+parámetros son del gráfico y no se escriben en el controlador.
+
+Resultados sobre las rutas registradas:
+50%: antes 35,31 s; referencia ajustada 12,82 s; registro real 12,64 s.
+40%: antes 54,13 s; referencia ajustada 15,52 s; registro real 15,66 s.
+Validación dejando una sesión fuera del ajuste: error total +0,36 s y -0,33 s.
+Eso evalúa dos rutas de este conjunto, no garantiza tiempos de otras rutas.
+
+El rango observado es 40–50%. Fuera de ese rango, o con otras configuraciones,
+cargas o herramientas, el resultado es una extrapolación pendiente de validar.
+El ajuste no se aprende automáticamente de futuras ejecuciones.
+La configuración y observaciones auditables están en calibracion_tiempos.json.
+Si falta ese archivo o es inválido se vuelve al LSPB nominal.
+Las referencias guardadas antes de esta calibración se conservan originales;
+la vista previa nueva y las futuras ejecuciones usan el ajuste actual.
+No se estiran las curvas medidas ni se modifica el historial para hacerlas coincidir.

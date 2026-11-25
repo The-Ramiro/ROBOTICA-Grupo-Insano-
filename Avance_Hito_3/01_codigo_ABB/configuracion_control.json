@@ -1,0 +1,19 @@
+{
+  "robot": "ABB IRB120",
+  "frame": "base_link",
+  "tool": "tool0",
+  "tool_description": "Solo brida, sin herramienta adicional; confirmado por el usuario",
+  "tcp_offset_m": [0.0, 0.0, 0.0],
+  "min_tip_z_m": 0.0,
+  "min_tip_z_source": "Usuario confirma giro de la base. Plano horizontal por el origen de joint_1 del URDF, situado en z=0 de base_link",
+  "height_reference_joint": "joint_1",
+  "height_reference_origin_base_m": [0.0, 0.0, 0.0],
+  "physical_height_reference_verified": false,
+  "previous_height_cm_not_active": 25,
+  "floor_z_m": null,
+  "allowed_input_modes": ["joint_angles", "xyz_hold_orientation"],
+  "hardware_execution_allowed": false,
+  "lab_speed_limits_approved": false,
+  "continuous_collision_checked": false,
+  "status": "Solo brida; limite de vista previa z>=0 por el origen del giro de la base del modelo. Pendientes correspondencia fisica del plano, piso, limites del laboratorio e integracion de control. Envio fisico bloqueado."
+}

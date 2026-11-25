@@ -1,0 +1,108 @@
+{
+  "repository": "https://github.com/ros-industrial/abb",
+  "commit": "45f4769d826cf3ac62a65495f2db67b78b0c81df",
+  "variant": "IRB120 3/0.58",
+  "files": [
+    {
+      "path": "abb_irb120_support/LICENSE",
+      "git_blob_sha1": "137069b823873b8bcf42979bcf8e9371052d26a2",
+      "sha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff"
+    },
+    {
+      "path": "abb_irb120_support/meshes/irb120_3_58/collision/base_link.stl",
+      "git_blob_sha1": "178065750043fdeffe4884140f988ae2ff44175f",
+      "sha256": "fe507189533016be02488dafe07f281b8603ddbd12b4b39e45a8b3d2f8ea4da6"
+    },
+    {
+      "path": "abb_irb120_support/meshes/irb120_3_58/collision/link_1.stl",
+      "git_blob_sha1": "6a9e9f903ae1876f293f5324238059936109b3a0",
+      "sha256": "82280b5d7be33053dd257ebec3f771c45937b38ce74f93f5799d8ec190bc1dff"
+    },
+    {
+      "path": "abb_irb120_support/meshes/irb120_3_58/collision/link_2.stl",
+      "git_blob_sha1": "82513773434fe7006f06a207b17cfa8917b3fcc5",
+      "sha256": "0a9d86abfce39f9f47191713062e2437e8ece5e9f9e0be50f429760b245fed06"
+    },
+    {
+      "path": "abb_irb120_support/meshes/irb120_3_58/collision/link_3.stl",
+      "git_blob_sha1": "6b4aa584e230f5672e7b24a9b2101f5dcbeeb1ca",
+      "sha256": "5dbaf0a52bd79927f2128805a9accdb9987b15fa97177e1270f3c04bf0646fe5"
+    },
+    {
+      "path": "abb_irb120_support/meshes/irb120_3_58/collision/link_4.stl",
+      "git_blob_sha1": "820315013696e48e230819607b65cac055d07a43",
+      "sha256": "39e826eaf499b64fc7026703707023b466153055620bca7792b091f80f4fb1ab"
+    },
+    {
+      "path": "abb_irb120_support/meshes/irb120_3_58/collision/link_5.stl",
+      "git_blob_sha1": "35b3ab522714b5345d63175409b991979cb7e0d4",
+      "sha256": "272ccfcd4466fb7091ed7c67e520c2b6acf3291f6520333cfc2b65043dc6a7db"
+    },
+    {
+      "path": "abb_irb120_support/meshes/irb120_3_58/collision/link_6.stl",
+      "git_blob_sha1": "d14b9c55583b3f633838eebcc3effaf2bacd03ea",
+      "sha256": "ec4bf3ab06ba058537e3b75846499b0a8d0cf56cd03cfcfdacbd32ae414c19c8"
+    },
+    {
+      "path": "abb_irb120_support/meshes/irb120_3_58/visual/base_link.stl",
+      "git_blob_sha1": "35a6b031c3b14fa813436ebf84b9513d960ccf0b",
+      "sha256": "49a02590535dbfad67698375ee47f000ed078b8bb8594f9d4b1b083ee61a5223"
+    },
+    {
+      "path": "abb_irb120_support/meshes/irb120_3_58/visual/link_1.stl",
+      "git_blob_sha1": "f6999d99f7db6337fca186a4f4e2addb8c2371d1",
+      "sha256": "402c5fc5107fbea74a23d519267c79b1e4800683065468d7f27e2933f7720a9a"
+    },
+    {
+      "path": "abb_irb120_support/meshes/irb120_3_58/visual/link_2.stl",
+      "git_blob_sha1": "0459f2c6efada4bf7e4297a3057bff82812afd44",
+      "sha256": "e90166c9e96ccfbab5dd4d0e9d93a8826a5666b86fd91948412be52b4affecaa"
+    },
+    {
+      "path": "abb_irb120_support/meshes/irb120_3_58/visual/link_3.stl",
+      "git_blob_sha1": "c7eb0e9d1f0d61b40226a313e3e5f11f0054ec20",
+      "sha256": "e110970dba3b4f437afb08a908cebfb56e4d4ca4475f4a44050198d42bf22d03"
+    },
+    {
+      "path": "abb_irb120_support/meshes/irb120_3_58/visual/link_4.stl",
+      "git_blob_sha1": "6c210abf755ddef880e2897fac817ecd3081141c",
+      "sha256": "09665ea995035a5e68d203d343cac7b78e5437d2ac7aa8c528dd6662700839b2"
+    },
+    {
+      "path": "abb_irb120_support/meshes/irb120_3_58/visual/link_5.stl",
+      "git_blob_sha1": "f38ef9b03635a09794b318deb0e05db4bb1e3892",
+      "sha256": "693fd935384f0cbbd0acfd52a8a54f7311a8461ba523d889d793d2a2e0525ee1"
+    },
+    {
+      "path": "abb_irb120_support/meshes/irb120_3_58/visual/link_6.stl",
+      "git_blob_sha1": "f96f0a02e0f056ac410d550ff81bf9e9e81daefa",
+      "sha256": "c38e09e1e787164fbeacb52105d0d3016a34eaa495063a474a64718647a6ffbc"
+    },
+    {
+      "path": "abb_irb120_support/urdf/irb120_3_58.xacro",
+      "git_blob_sha1": "2141b1c217b37a63ba639dcc4b0a95824cda40ed",
+      "sha256": "bf1b16b2eadb2db4812893f553a9ab40549fca5aed86a9625bf7c601f4c048a5"
+    },
+    {
+      "path": "abb_irb120_support/urdf/irb120_3_58_macro.xacro",
+      "git_blob_sha1": "e836156a65d4035cac88cafa528bede91460f53d",
+      "sha256": "25f1b00a7388d02c35422b4a34b865a5f0ec1c76630edf6a613e56224bc74522"
+    },
+    {
+      "path": "abb_resources/LICENSE",
+      "git_blob_sha1": "137069b823873b8bcf42979bcf8e9371052d26a2",
+      "sha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff"
+    },
+    {
+      "path": "abb_resources/urdf/common_colours.xacro",
+      "git_blob_sha1": "83d7067cc607e82b9ad10c2bab519ea2e042ca4d",
+      "sha256": "da5e23b29d6ee6a38ee85969f59310fad0dd6b5387e1d23516b2817882f0243a"
+    },
+    {
+      "path": "abb_resources/urdf/common_materials.xacro",
+      "git_blob_sha1": "a7c3895d6b2a873f313acb9708a29bd657eb676c",
+      "sha256": "4be8a1ba6cb0407d31c32143be106036777c74a869c2dc237f42704bc690d314"
+    }
+  ],
+  "adaptation": "Macro expanded with empty prefix, official materials inlined; identity world_to_base_link joint added. Geometry, axes and limits preserved. PNGs are reference images, not 3D meshes."
+}

@@ -1,0 +1,55 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+  - Class: rviz_common/Views
+    Name: Views
+Visualization Manager:
+  Class: ""
+  Global Options:
+    Background Color: 36; 40; 48
+    Fixed Frame: world
+    Frame Rate: 30
+  Displays:
+    - Class: rviz_default_plugins/Grid
+      Name: Suelo
+      Enabled: true
+      Cell Size: 0.1
+      Plane Cell Count: 20
+      Color: 110; 120; 130
+      Reference Frame: world
+    - Class: rviz_default_plugins/RobotModel
+      Name: ABB IRB120
+      Enabled: true
+      Description Source: Topic
+      Description Topic:
+        Value: /robot_description
+        Depth: 1
+        Durability Policy: Transient Local
+        Reliability Policy: Reliable
+      Visual Enabled: true
+      Collision Enabled: false
+      Alpha: 1
+    - Class: rviz_default_plugins/Axes
+      Name: Base
+      Enabled: true
+      Reference Frame: base_link
+      Length: 0.2
+      Radius: 0.006
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Name: Current View
+      Distance: 1.6
+      Focal Point:
+        X: 0.15
+        Y: 0
+        Z: 0.35
+      Pitch: 0.35
+      Yaw: 0.8
+      Target Frame: world
+  Tools:
+    - Class: rviz_default_plugins/Interact
+    - Class: rviz_default_plugins/MoveCamera
+Window Geometry:
+  Width: 1000
+  Height: 720
